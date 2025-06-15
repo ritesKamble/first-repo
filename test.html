@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VMWare And Cloud</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      color: #000;
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+        url('images/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      margin: 0;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 3em;
+      z-index: 1000;
+    }
+
+    #menu-bar {
+      position: fixed;
+      top: 90px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    #menu-bar a, .dropbtn {
+      color: white;
+      font-size: 1.0em;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      min-width: 260px;
+      z-index: 1001;
+      border-radius: 6px;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    #columns-container {
+      margin-top: 160px;
+      width: 90vw;
+      max-width: 1200px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      height: calc(100vh - 180px);
+    }
+
+    .column {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      padding: 20px;
+      color: #000;
+      overflow-y: auto;
+      height: 100%;
+      position: relative;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+      font-size: 0.8em;
+      word-wrap: break-word;
+    }
+
+    th {
+      background-color: #000BFF;
+      color: white;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    td:hover {
+      background-color: #f1f1f1;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #555;
+      font-size: 1.1em;
+      font-family: 'Vivaldi', cursive;
+      font-style: italic;
+      user-select: none;
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+      width: 30px;
+    }
+
+#search-bar {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 1em;
+      width: 130px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <h1>VMWare And Cloud Team</h1>
+
+  <div id="menu-bar">
+
+<a href="file:///C:/Users/RiteshKambale/Desktop/my-project/menu.html">Home</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">vCenters</button>
+      <div class="dropdown-content">
+        <a href="https://10.94.104.104/ui" target="_blank">10.94.104.104 (Prod VC)</a>
+        <a href="https://10.94.104.11/ui" target="_blank">10.94.104.11 (Prod VC)</a>
+        <a href="https://10.94.160.157/ui" target="_blank">10.94.160.157 (Customer VC)</a>
+        <a href="https://10.94.179.201/ui" target="_blank">10.94.179.201 (SCRM Prod VC)</a>
+        <a href="https://10.156.45.200/ui" target="_blank">10.156.45.200 (SCRM DR VC)</a>
+        <a href="https://172.25.202.45/ui" target="_blank">172.25.202.45 (CCT DR VC)</a>
+        <a href="https://10.87.92.11/ui" target="_blank">10.87.92.11 (DR VC)</a>
+        <a href="https://10.94.114.18/ui" target="_blank">10.94.114.18 (staging VC)</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Hardware Case</button>
+      <div class="dropdown-content">
+        <a href="https://datacentersupport.lenovo.com/us/en/products/servers/thinksystem/sr650/7x06/7x06cto1ww/j302l42k/contactus" target="_blank">Lenovo Support</a>
+        <a href="https://support.hpe.com/connect/s/createcase" target="_blank">HP Support</a>
+        <a href="https://broadcomcms-software.wolkenservicedesk.com/wolken-support/mycases/request-details?requestId=35605426" target="_blank">Broadcom/VMWare Support</a>
+        <a href="https://id.cisco.com/oauth2/default/v1/authorize?response_type=code&scope=openid%20profile%20address%20offline_access%20cci_coimemberOf%20email&client_id=cae-okta-web-gslb-01&state=cZiWyg4wJK_eBcb16ZGhk85JppU&redirect_uri=https%3A%2F%2Fmycase.cloudapps.cisco.com%2Fcb%2Fsso&nonce=hnjU4Ssc4nNZ0_l-TpAq6EpxVvowyyYnuxV3IwTOQwQ" target="_blank">Cisco Support</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Monitoring</button>
+      <div class="dropdown-content">
+        <a href="https://10.94.46.43/ui/" target="_blank">vROPs</a>
+        <a href="https://10.94.104.40/ui/" target="_blank">Xclarity</a>
+        <a href="https://10.94.104.38/#/login" target="_blank">HP OneView</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Inventory</button>
+      <div class="dropdown-content">
+        <a href="https://ansible-tower.in2.cacf.kyndryl.net/#/home" target="_blank">RV Tool Data</a>
+        <a href="file:///C:/Users/RiteshKambale/Desktop/my-project/test.html">Inventory Dashboard</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">VM Deploymen</button>
+      <div class="dropdown-content">
+        <a href="https://vigpt.vodafoneidea.com/" target="_blank">VI BOT</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">VCF</button>
+      <div class="dropdown-content">
+        <a href="https://10.94.46.99" target="_blank">SDDC Manager</a>
+        <a href="https://10.94.46.100" target="_blank">vCenter</a>
+      </div>
+    </div>
+  </div>
+
+<div id="menu-bar">
+    <!-- Menu Bar remains the same as previous code -->
+  </div>
+
+
+  <div id="columns-container">
+    <div class="column" id="right-column">
+      <h2 style="text-align:center; font-size: 1.8em; position: sticky; top: 0; background-color: rgba(255,255,255,0.95); z-index: 1;">Hardware Details</h2>
+
+ <!-- Search bar added above the table -->
+      <input type="text" id="search-bar" placeholder="Search Host..." onkeyup="filterTable()">
+
+      <table id="cases-table">
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>Host</th>
+            <th>Serial No</th>
+            <th>IMM</th>
+            <th>Chasis</th>
+            <th>Vcenter</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Pre-filled sample data (non-editable) -->
+          <tr>
+            <td>1</td>
+            <td>10.94.104.22</td>
+            <td>SN123456</td>
+            <td><a href="http://example.com/imm1" target="_blank">IMM1</a></td>
+            <td><a href="http://example.com/chasisA" target="_blank">Chasis-A</a></td>
+            <td><a href="http://example.com/chasis2" target="_blank">vcenter</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>10.94.104.23</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+
+	<tr>
+            <td>2</td>
+            <td>10.94.104.24</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+	
+	<tr>
+            <td>2</td>
+            <td>10.94.104.25</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+
+<tr>
+            <td>2</td>
+            <td>10.94.104.26</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+
+	<tr>
+            <td>2</td>
+            <td>10.94.104.27</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+
+<tr>
+            <td>2</td>
+            <td>10.94.104.28</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+
+
+<tr>
+            <td>2</td>
+            <td>10.94.104.29</td>
+            <td>SN789012</td>
+            <td><a href="http://example.com/imm2" target="_blank">IMM2</a></td>
+            <td><a href="http://example.com/chasisB" target="_blank">Chasis-B</a></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>Prepared By Ritesh Kamble</footer>
+
+<script>
+    function filterTable() {
+      // Get the search query
+      var input = document.getElementById('search-bar');
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById('cases-table');
+      var rows = table.getElementsByTagName('tr');
+      
+      // Loop through all table rows, hiding those that don't match the search query
+      for (var i = 1; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName('td');
+        var hostCell = cells[1]; // Host column is the second column (index 1)
+        
+        if (hostCell) {
+          var hostText = hostCell.textContent || hostCell.innerText;
+          if (hostText.toLowerCase().indexOf(filter) > -1) {
+            rows[i].style.display = ""; // Show the row
+          } else {
+            rows[i].style.display = "none"; // Hide the row
+          }
+        }
+      }
+    }
+  </script>
+
+
+</body>
+</html>

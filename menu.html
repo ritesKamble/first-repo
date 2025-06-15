@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" href="images/logo.png">
+
+
+
+
+
+  <title>VMWare And Cloud</title>
+  <style>
+
+.logo-circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 15px;
+  border: 2px solid rgb(41, 20, 95); /* Optional: adds a border around the circle */
+}
+
+
+
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      color: #000;
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+        url('images/bg5.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(239, 119, 119, 0.5);
+      color: #1b055c;
+      margin: 0;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 3em;
+      z-index: 1000;
+    }
+
+    #menu-bar {
+      position: fixed;
+      top: 90px;
+      width: 100%;
+      background: rgba(133, 122, 4, 0.977);
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    #menu-bar a, .dropbtn {
+      color: white;
+      font-size: 1.0em;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(88, 88, 85, 0.97);
+      min-width: 260px;
+      z-index: 1001;
+      border-radius: 6px;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    #columns-container {
+      margin-top: 160px;
+      width: 90vw;
+      max-width: 1200px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      height: calc(100vh - 180px);
+    }
+
+    .column {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 45%;
+      padding: 20px;
+      color: #000;
+      overflow-y: auto;
+      height: 100%;
+      position: relative;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+      font-size: 0.8em;
+      word-wrap: break-word;
+    }
+
+    th {
+      background-color: #000BFF;
+      color: white;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    td:hover {
+      background-color: #f1f1f1;
+    }
+
+    .add-row-btn {
+      padding: 8px 14px;
+      background-color: #28a745;
+      color: white;
+      font-size: 0.8em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .add-row-btn:hover {
+      background-color: #218838;
+    }
+
+    .close-case-btn {
+      background-color: #dc3545;
+      color: white;
+      font-size: 0.7em;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .close-case-btn:hover {
+      background-color: #c82333;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #555;
+      font-size: 1.1em;
+      font-family: 'Vivaldi', cursive;
+      font-style: italic;
+      user-select: none;
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+      width: 30px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <h1>
+
+<img src="images/logo.png" alt="Logo" class="logo-circle">
+VMWare And Cloud Team</h1>
+
+  <div id="menu-bar">
+
+<a href="file:///C:/Users/RiteshKambale/Desktop/my-project/menu.html">Home</a>
+
+
+    <div class="dropdown">
+      <button class="dropbtn">vCenters</button>
+      <div class="dropdown-content">
+        <a href="https://10.94.104.104/ui" target="_blank">10.94.104.104 (Prod VC)</a>
+        <a href="https://10.94.104.11/ui" target="_blank">10.94.104.11 (Prod VC)</a>
+        <a href="https://10.94.160.157/ui" target="_blank">10.94.160.157 (Customer VC)</a>
+        <a href="https://10.94.179.201/ui" target="_blank">10.94.179.201 (SCRM Prod VC)</a>
+        <a href="https://10.156.45.200/ui" target="_blank">10.156.45.200 (SCRM DR VC)</a>
+        <a href="https://172.25.202.45/ui" target="_blank">172.25.202.45 (CCT DR VC)</a>
+        <a href="https://10.87.92.11/ui" target="_blank">10.87.92.11 (DR VC)</a>
+        <a href="https://10.94.114.18/ui" target="_blank">10.94.114.18 (staging VC)</a>
+      </div>
+    </div>
+
+
+
+    <div class="dropdown">
+      <button class="dropbtn">Hardware Case</button>
+      <div class="dropdown-content">
+        <a href="https://datacentersupport.lenovo.com/us/en/products/servers/thinksystem/sr650/7x06/7x06cto1ww/j302l42k/contactus" target="_blank">Lenovo Support</a>
+        <a href="https://support.hpe.com/connect/s/createcase" target="_blank">HP Support</a>
+        <a href="https://broadcomcms-software.wolkenservicedesk.com/wolken-support/mycases/request-details?requestId=35605426" target="_blank">Broadcom/VMWare Support</a>
+        <a href="https://id.cisco.com/oauth2/default/v1/authorize?response_type=code&scope=openid%20profile%20address%20offline_access%20cci_coimemberOf%20email&client_id=cae-okta-web-gslb-01&state=cZiWyg4wJK_eBcb16ZGhk85JppU&redirect_uri=https%3A%2F%2Fmycase.cloudapps.cisco.com%2Fcb%2Fsso&nonce=hnjU4Ssc4nNZ0_l-TpAq6EpxVvowyyYnuxV3IwTOQwQ
+" target="_blank">Cisco Support</a>
+    </div>
+    </div>
+
+
+<div class="dropdown">
+      <button class="dropbtn">Monitoring</button>
+      <div class="dropdown-content">
+        <a href="https://10.94.46.43/ui/" target="_blank">vROPs</a>
+        <a href="https://10.94.104.40/ui/" target="_blank">Xclarity</a>
+        <a href="https://10.94.104.38/#/login" target="_blank">HP OneView</a>
+    </div>
+    </div>
+
+<div class="dropdown">
+      <button class="dropbtn">Inventory</button>
+      <div class="dropdown-content">
+        <a href="https://ansible-tower.in2.cacf.kyndryl.net/#/home" target="_blank">RV Tool Data</a>
+        <a href="file:///C:/Users/RiteshKambale/Desktop/my-project/test.html">Inventory Dashboard</a>
+        
+    </div>
+    </div>
+
+
+<div class="dropdown">
+      <button class="dropbtn">VM Deploymen</button>
+      <div class="dropdown-content">
+        <a href="https://vigpt.vodafoneidea.com/" target="_blank">VI BOT</a>
+        
+    </div>
+    </div>
+
+<div class="dropdown">
+      <button class="dropbtn">VCF</button>
+      <div class="dropdown-content">
+        <a href="https://10.94.46.99" target="_blank">SDDC Manager</a>
+        <a href="https://10.94.46.100" target="_blank">vCenter</a>
+        
+    </div>
+    </div>
+
+    
+  </div>
+
+  <div id="columns-container">
+    <div class="column" id="left-column">
+      <h2 style="text-align:center; font-size: 1.8em; position: sticky; top: 0; background-color: rgba(255,255,255,0.95); z-index: 1;">Broadcom/VMWare Open Cases</h2>
+      <table id="vmware-cases-table">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Case No</th>
+            <th>Account</th>
+            <th>Engineer</th>
+            <th>Issue</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button class="add-row-btn" onclick="addVMWareRow()">Add New Case</button>
+      <button class="add-row-btn" onclick="exportVMWareCases()">Export Cases</button>
+      <input type="file" id="importVMWareFile" accept=".json" onchange="importVMWareCases()" />
+    </div>
+
+    <div class="column" id="right-column">
+      <h2 style="text-align:center; font-size: 1.8em; position: sticky; top: 0; background-color: rgba(255,255,255,0.95); z-index: 1;">Hardware Open Cases</h2>
+      <table id="cases-table">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Case No</th>
+            <th>Serial No</th>
+            <th>Vendor</th>
+            <th>Issue</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button class="add-row-btn" onclick="addRow()">Add New Case</button>
+      <button class="add-row-btn" onclick="exportCases()">Export Cases</button>
+      <input type="file" id="importFile" accept=".json" onchange="importCases()" />
+    </div>
+  </div>
+
+  <footer>Prepared By Ritesh Kamble</footer>
+
+
+
+
+  <script>
+    const hardwareStorageKey = "openCases";
+    const vmwareStorageKey = "vmwareCases";
+
+    window.onload = function () {
+      const hardwareCases = JSON.parse(localStorage.getItem(hardwareStorageKey) || "[]");
+      renderTable(hardwareCases);
+
+      const vmwareCases = JSON.parse(localStorage.getItem(vmwareStorageKey) || "[]");
+      renderVMWareTable(vmwareCases);
+    };
+
+    function renderTable(data) {
+      const tbody = document.querySelector("#cases-table tbody");
+      tbody.innerHTML = "";
+      data.forEach((row, index) => {
+        const newRow = tbody.insertRow();
+        newRow.innerHTML = `
+          <td>${index + 1}</td>
+          <td contenteditable="true">${row.caseNo}</td>
+          <td contenteditable="true">${row.serialNo}</td>
+          <td contenteditable="true">${row.vendor}</td>
+          <td contenteditable="true">${row.issue}</td>
+          <td><button class="close-case-btn" onclick="deleteRow(this, 'hardware')">Close Case</button></td>
+        `;
+      });
+    }
+
+    function renderVMWareTable(data) {
+      const tbody = document.querySelector("#vmware-cases-table tbody");
+      tbody.innerHTML = "";
+      data.forEach((row, index) => {
+        const newRow = tbody.insertRow();
+        newRow.innerHTML = `
+          <td>${index + 1}</td>
+          <td contenteditable="true">${row.caseNo}</td>
+          <td contenteditable="true">${row.account}</td>
+          <td contenteditable="true">${row.engineer}</td>
+          <td contenteditable="true">${row.issue}</td>
+          <td><button class="close-case-btn" onclick="deleteRow(this, 'vmware')">Close Case</button></td>
+        `;
+      });
+    }
+
+    function saveCases(key, selector) {
+      const rows = document.querySelectorAll(selector + " tbody tr");
+      const data = Array.from(rows).map(row => {
+        const cells = row.querySelectorAll("td");
+        if (key === 'hardware') {
+          return {
+            caseNo: cells[1].textContent.trim(),
+            serialNo: cells[2].textContent.trim(),
+            vendor: cells[3].textContent.trim(),
+            issue: cells[4].textContent.trim()
+          };
+        } else {
+          return {
+            caseNo: cells[1].textContent.trim(),
+            account: cells[2].textContent.trim(),
+            engineer: cells[3].textContent.trim(),
+            issue: cells[4].textContent.trim()
+          };
+        }
+      });
+      localStorage.setItem(key === 'hardware' ? hardwareStorageKey : vmwareStorageKey, JSON.stringify(data));
+    }
+
+    function deleteRow(button, key) {
+      const row = button.closest("tr");
+      row.remove();
+      saveCases(key, key === 'hardware' ? "#cases-table" : "#vmware-cases-table");
+      reindexRows(key);
+    }
+
+    function reindexRows(key) {
+      const rows = document.querySelectorAll((key === 'hardware' ? "#cases-table" : "#vmware-cases-table") + " tbody tr");
+      rows.forEach((row, index) => {
+        row.cells[0].textContent = index + 1;
+      });
+    }
+
+    function addRow() {
+      const tbody = document.querySelector("#cases-table tbody");
+      const newRow = tbody.insertRow();
+      newRow.innerHTML = `
+        <td>${tbody.rows.length + 1}</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td><button class="close-case-btn" onclick="deleteRow(this, 'hardware')">Close Case</button></td>
+      `;
+      saveCases('hardware', "#cases-table");
+    }
+
+    function addVMWareRow() {
+      const tbody = document.querySelector("#vmware-cases-table tbody");
+      const newRow = tbody.insertRow();
+      newRow.innerHTML = `
+        <td>${tbody.rows.length + 1}</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td><button class="close-case-btn" onclick="deleteRow(this, 'vmware')">Close Case</button></td>
+      `;
+      saveCases('vmware', "#vmware-cases-table");
+    }
+
+    function exportCases() {
+      const data = JSON.parse(localStorage.getItem(hardwareStorageKey) || "[]");
+      downloadFile(data, "hardware_cases.json");
+    }
+
+    function exportVMWareCases() {
+      const data = JSON.parse(localStorage.getItem(vmwareStorageKey) || "[]");
+      downloadFile(data, "vmware_cases.json");
+    }
+
+    function downloadFile(data, filename) {
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function importCases() {
+      const file = document.getElementById("importFile").files[0];
+      if (!file) return;
+      readAndImport(file, "hardware");
+    }
+
+    function importVMWareCases() {
+      const file = document.getElementById("importVMWareFile").files[0];
+      if (!file) return;
+      readAndImport(file, "vmware");
+    }
+
+    function readAndImport(file, key) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (key === "hardware") {
+            renderTable(data);
+          } else {
+            renderVMWareTable(data);
+          }
+          localStorage.setItem(key === 'hardware' ? hardwareStorageKey : vmwareStorageKey, JSON.stringify(data));
+        } catch {
+          alert("Invalid JSON file");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    document.addEventListener("input", () => {
+      saveCases('hardware', "#cases-table");
+      saveCases('vmware', "#vmware-cases-table");
+    });
+  </script>
+
+
+</body>
+</html>
